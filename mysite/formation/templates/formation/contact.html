@@ -36,11 +36,18 @@
     <section class="container">
         <div class="text-center">
             <h1>Pour nous contacter</h1>
-            <p class="text-prez">Quoi de mieux qu'un petit mail.</p>
+            <p class="text-prez">Quoi de mieux qu'un petit message.</p>
         </div>
     </section>
 
+    <!-- Formulaire -->
     <section class="container">
+
+        <!-- <form method="POST" class="post-form">{% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btn-outline-primary">Envoyer</button>
+        </form> -->
+
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Nom</span>
             <input type="text" class="form-control" aria-label="lastname" aria-describedby="basic-addon1">
@@ -59,6 +66,26 @@
         <div class="input-group">
             <span class="input-group-text">Votre message</span>
             <textarea class="form-control" aria-label="message"></textarea>
+        </div>
+
+        <div class="pt-3">
+            <button type="button" class="btn btn-outline-primary">Envoyer</button>
+        </div>
+        
+    </section>
+
+    <!-- Message des contacts -->
+    <section class="container pt-4">
+        <div class="row">
+            {% for message in messages %}
+            <div class="card col-sm-4 card-m">
+                <div class="card-body">
+                    <h5 class="card-title">{{ message.firstname }} {{ message.lastname }}</h5>
+                    <p class="card-subtitle mb-2 text-muted text-prez">{{ message.created_date }}</p>
+                    <p class="card-text">{{ message.message }}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </section>
 
