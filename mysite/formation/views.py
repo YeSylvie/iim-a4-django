@@ -15,6 +15,9 @@ def contact(request):
     messages = Contact.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
     return render(request, 'formation/contact.html', {'messages': messages})
 
+def dashboard(request):
+    return render(request, 'formation/dashboard.html')
+
 # def new_contact(request):
 #     if request.method == "POST":
 #         form = ContactForm(request.POST)
