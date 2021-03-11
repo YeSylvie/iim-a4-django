@@ -9,3 +9,8 @@ class Contact(models.Model):
     email = models.EmailField()
     message = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
+
+class UploadCvFile(models.Model):
+    cv_name = models.CharField(max_length=255, blank=True)
+    cv_file = models.FileField(upload_to='formation/documents/cv/')
+    uploaded_date = models.DateTimeField(default=timezone.now)

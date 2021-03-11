@@ -8,9 +8,9 @@ body {
 }
 
 .second-nav {
-    position: fixed;
+    width: 250px;
     display: block;
-    height: 100vh;
+    height: calc(100vh - 58px);
     background-color: #545F77;
 }
 

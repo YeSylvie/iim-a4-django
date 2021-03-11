@@ -1,10 +1,13 @@
-from django import forms
+from django.forms import ModelForm
 from django.utils import timezone
-from .models import Contact
+from .models import Contact, UploadCvFile
 
-# class ContactForm(forms.ModelForm):
-#     lastname = forms.CharField(label='Votre nom', max_length=200)
-#     firstname = forms.CharField(label='Votre prénom', max_length=200)
-#     email = forms.EmailField(label='Votre mail')
-#     message = forms.CharField(label='Votre message', widget=forms.Textarea)
-#     created_date = forms.DateTimeField(timezone.now)
+class ContactForm(ModelForm):
+    class Meta:
+        model = Contact
+        fields = ['lastname', 'firstname', 'email', 'message']
+
+class UploadCvFileForm(ModelForm):
+    class Meta:
+        model = UploadCvFile
+        fields = ['cv_name', 'cv_file']

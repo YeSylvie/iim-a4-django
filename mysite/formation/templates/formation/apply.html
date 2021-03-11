@@ -1,0 +1,47 @@
+{% extends 'formation/base.html' %}
+
+{% block content %}
+
+    <section class="container">
+        <div class="text-center">
+            <h1>Vous souhaitez candidater?</h1>
+            <p class="text-prez">Venez déposer votre CV.</p>
+        </div>
+    </section>
+
+    <!-- UPLAOD CV -->
+    <section class="container">
+        <form enctype="multipart/form-data" method="POST" class="post-form" action="{% url 'new-cv' %}">{% csrf_token %}
+            <div class="input-group mb-3">
+                <span class="input-group-text">Nom du CV</span>
+                <input type="text" class="form-control" aria-label="cv_file" name="cv_name" placeholder="CV_Toto" required> 
+            </div>
+            <div class="depot-cv text-center">
+                <input type="file" name="cv_file" id="file" class="inputfile" required/>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-outline-primary">Envoyer</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Message des contacts -->
+    <section class="container pt-4">
+        <h2>Les CV</h2>
+        <div class="row"> 
+            {% for cv in cvs %}
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ cv.cv_name }}</h5>
+                        <h6 class="card-subtitle mb-2 datetime">Téléversé le {{ cv.uploaded_date }}</h6>
+                        <a href="{{ cv.cv_file }}" class="card-link" target="blank_" >Voir le CV</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}
+
