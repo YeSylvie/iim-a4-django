@@ -12,5 +12,5 @@ class Contact(models.Model):
 
 class UploadCvFile(models.Model):
     cv_name = models.CharField(max_length=255, blank=True)
-    cv_file = models.FileField(upload_to='formation/documents/cv/')
+    cv_file = models.FileField(upload_to='documents/cv/')
     uploaded_date = models.DateTimeField(default=timezone.now)
