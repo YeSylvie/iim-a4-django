@@ -15,3 +15,27 @@ Le projet comporte 4 pages :
 - Candidature : formulaire qui permet d'upload des CV 
 - Dashboard : Intégration du dashboard 
 - Contact : formulaire de contact 
+
+### Pour lancer l'application 
+Avoir un environnement virtuel et le lancer -> ici **Virtualenv**
+
+Ensuite, se mettre dans le dossier /mysite. 
+```
+cd mysite/
+```
+
+Puis lancer la commande suite : 
+```
+python3 manage.py runserver
+```
+
+Vous pouvez accéder à l'application via ici : http://127.0.0.1:8000/
+
+### Pour la partie des tests unitaires 
+
+Groupe : Laura TRICHET & Hugo LAMBERT & Sylvie YE
+
+Commande pour lancer les tests unitaires : 
+```
+python3 manage.py test
+```
