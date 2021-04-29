@@ -16,5 +16,8 @@ jobs:
         run: |
           python3 -m venv venv
           source venv/bin/activate
+      - name: Install dependencies
+        run: |
+          python3 -m pip install Django
       - name: Run tests
         run: python3 mysite/manage.py test
