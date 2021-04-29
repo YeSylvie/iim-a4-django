@@ -13,4 +13,5 @@ jobs:
         with:
           python-version: 3.9.4
       - name: Run tests
+        registry-url: https://github.com/YeSylvie/iim-a4-django/tree/develop/mysite
         run: python3 manage.py test
