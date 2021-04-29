@@ -1,0 +1,16 @@
+name: CI - Tests unitaires et fonctionnels
+
+on: [push, pull_request]
+
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Init projet
+        uses: actions/checkout@v2
+      - name: Set up Python 3.9.4
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9.4
+      - name: Run tests
+        run: python3 manage.py test
