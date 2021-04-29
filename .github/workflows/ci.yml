@@ -5,6 +5,17 @@ on: [push, pull_request]
 jobs:
   build: 
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_USER: sylvieye
+          POSTGRES_PASSWORD: 5uuvyuf3cN
+          POSTGRES_DB: dbdjano
+        ports:
+          - 5432:5432
+
     steps: 
       - name: Init projet
         uses: actions/checkout@v2
