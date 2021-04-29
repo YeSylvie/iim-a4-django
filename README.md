@@ -18,6 +18,9 @@ Le projet comporte 4 pages :
 
 ### Pour lancer l'application 
 Avoir un environnement virtuel et le lancer -> ici **Virtualenv**
+```
+source myvenv/bin/activate
+```
 
 Ensuite, se mettre dans le dossier /mysite. 
 ```

@@ -15,26 +15,26 @@
       <form method="POST" class="post-form" action="{% url 'new-contact' %}">{% csrf_token %}
           <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Nom</span>
-              <input type="text" class="form-control" aria-label="lastname" aria-describedby="basic-addon1" name="lastname" required> 
+              <input id="lastname" type="text" class="form-control" aria-label="lastname" aria-describedby="basic-addon1" name="lastname" required> 
           </div>
 
           <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon2">Prénom</span>
-              <input type="text" class="form-control" aria-label="firstname" aria-describedby="basic-addon1" name="firstname" required>
+              <input id="firstname" type="text" class="form-control" aria-label="firstname" aria-describedby="basic-addon1" name="firstname" required>
           </div>
 
           <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon3">Mail</span>
-              <input type="text" class="form-control" placeholder="toto@exemple.com" aria-label="email" aria-describedby="basic-addon1" name="email" required>
+              <input id="email" type="text" class="form-control" placeholder="toto@exemple.com" aria-label="email" aria-describedby="basic-addon1" name="email" required>
           </div>
           
           <div class="input-group">
-              <span class="input-group-text">Votre message</span>
-              <textarea class="form-control" aria-label="message" name="message" required></textarea>
+              <span class="input-group-text" id="basic-addon4">Votre message</span>
+              <textarea id="message" class="form-control" aria-label="message" name="message" required></textarea>
           </div>
 
           <div class="pt-3 text-center">
-              <button type="submit" class="btn btn-outline-primary">Envoyer</button>
+              <button type="submit" id="submit" class="btn btn-outline-primary">Envoyer</button>
           </div>
       </form>
       
