@@ -13,4 +13,4 @@ jobs:
         with:
           python-version: 3.9.4
       - name: Run tests
-        run: python3 manage.py test
+        run: python3 mysite/manage.py test
