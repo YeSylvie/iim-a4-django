@@ -1,5 +1,6 @@
 name: CI - Tests unitaires et fonctionnels
-  on: [push, pull_request]
+
+on: [push, pull_request]
 
 jobs:
   build: 
@@ -12,4 +13,4 @@ jobs:
         with:
         python-version: 3.9.1
       - name: Run tests
-        run: python manage.py test
+        run: python3 manage.py test
